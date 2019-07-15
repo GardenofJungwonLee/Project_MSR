@@ -48,6 +48,33 @@ public class LessonModelVirtualDB {
 				new Area("서초구", 1250, 4)
 		);
 		lessonInfoList.add(lsInfo);
+		
+		lsInfo = new LessonInfo(
+				"ENG005",
+				new Lesson("[2020 NEW 믿어봐! 패키지] 문장편 + 독해편 (현장 Ver.)", 5 , 11),
+				new Teacher("조정식", 37, 10000, "Star", 7),
+				new Assistant("이정원", 29, 5000, 16),
+				new Area("강남구", 300, 3)
+		);
+		lessonInfoList.add(lsInfo);
+		
+		lsInfo = new LessonInfo(
+				"ENG006",
+				new Lesson("[하루 15분 듣기 완성] 듣.고.파 리스닝 기초", 1 , 6),
+				new Teacher("라이언 킴", 35, 6500, "Good", 8),
+				new Assistant("김조연", 29, 3000, 9),
+				new Area("연수구", 100, 6)
+		);
+		lessonInfoList.add(lsInfo);
+		
+		lsInfo = new LessonInfo(
+				"ENG007",
+				new Lesson("[2020 NEW] EBS 고난도 문장 해석, E339_3줄 이상의 복잡한 구문 정리", 2 , 10),
+				new Teacher("김기철", 42, 9500, "Best", 13),
+				new Assistant("마연희", 33, 5500, 42),
+				new Area("부평구", 650, 2)
+		);
+		lessonInfoList.add(lsInfo);
 	}
 
 	public static LessonModelVirtualDB getInstance() {
