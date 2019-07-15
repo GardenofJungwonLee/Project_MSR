@@ -10,7 +10,7 @@ import lesson.model.dto.Teacher;
 
 public class LessonModelVirtualDB {
 	private static LessonModelVirtualDB instance = new LessonModelVirtualDB();
-	private ArrayList lessonInfoList = new ArrayList<>();
+	private ArrayList<LessonInfo> lessonInfoList = new ArrayList<>();
 
 	private  LessonModelVirtualDB() {
 		LessonInfo lsInfo = new LessonInfo(
@@ -49,30 +49,20 @@ public class LessonModelVirtualDB {
 		);
 		lessonInfoList.add(lsInfo);
 	}
-
+	// singtone design
 	public static LessonModelVirtualDB getInstance() {
 		return instance;
 	}
-	
+	// infoList 리턴
 	public ArrayList<LessonInfo> getLessonInfoList () {
 		return instance.lessonInfoList;
 	}
-	
+	// info 추가
 	public void insertInfo (LessonInfo lessonInfo) {
 		lessonInfoList.add(lessonInfo);
 	}
-	
+	// info 삭제
 	public void deleteInfo (LessonInfo lessonInfo) {
 		lessonInfoList.remove(lessonInfo);
 	}
-	
-	public static void main(String[] args) {
-		LessonModelVirtualDB db = LessonModelVirtualDB.getInstance();
-		
-		for(LessonInfo lsInfo : db.getLessonInfoList()) {
-			System.out.println(lsInfo);
-		}
-
-	}
-
 }

@@ -28,18 +28,18 @@ public class StartView {
 		} else {
 			System.out.println("존재하지 않는 ID입니다!");
 			return;}
-		
 		// 메인 기능
 		LessonController controller = LessonController.getInstance();
+
 		System.out.println("== 전체 강의 검색 ==");
 		controller.infoListView();
 		
 		System.out.println("== 강의 제목 검색 ==");
 		controller.infoViewByTitle("[EBS는 단연, 조정식] EBS 변형문제 패키지");
-		
+
 		System.out.println("\n== 선생님 이름 검색 ==");
 		controller.infoViewByTeacher("빌리");
-		
+
 		System.out.println("\n== 강의 추가 후 선생님 이름 검색 ==");
 		if (adminAuthority) {
 		controller.insertLessonInfo(
@@ -50,7 +50,7 @@ public class StartView {
 				new Area("분당구", 200, 4)));
 		} else {System.out.println("권한이 없습니다!");}
 		controller.infoViewByTeacher("김기훈");
-		
+	
 		System.out.println("\n== 강의 삭제 후 선생님 이름 검색 ==");
 		if (adminAuthority) {
 		controller.deleteLessonInfo("[EBS는 단연, 조정식] EBS 변형문제 패키지");
@@ -71,5 +71,4 @@ public class StartView {
 		controller.discountLessonPrice("[2020 NEW 확실해! 패키지] 빈칸편 + 순서삽입편", 40);
 		controller.infoViewByTeacher("빌리");
 		}
-	
 }
