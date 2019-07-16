@@ -1,4 +1,4 @@
-package view;
+package lesson.view;
 
 import java.util.ArrayList;
 

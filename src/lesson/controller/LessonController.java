@@ -6,9 +6,9 @@ import lesson.exception.NotExistException;
 import lesson.model.dto.LessonInfo;
 import lesson.model.dto.People;
 import lesson.service.LessonInfoService;
+import lesson.view.EndView;
+import lesson.view.FailView;
 import net.sf.json.JSONArray;
-import view.EndView;
-import view.FailView;
 
 public class LessonController {
 	private static LessonController instance = new LessonController();

@@ -74,7 +74,9 @@ public class LessonInfoService {
 			throw new NotExistException("xx 해당 이름의 강의는 존재하지 않습니다. xx\\n");
 		} else {
 			Lesson lesson = info.getLesson();
-			lesson.setPrice(lesson.getPrice() * (100 - discountRate) / 100);
+			double beforePrice = lesson.getPrice();
+			lesson.setPrice(beforePrice * (100 - discountRate) / 100);
+			System.out.println(beforePrice + " 만원 -> " + lesson.getPrice() + " 만원" + " (" + discountRate + " %)");
 		}
 	}
 }

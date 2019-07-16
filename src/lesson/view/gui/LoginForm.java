@@ -1,4 +1,4 @@
-package view.gui;
+package lesson.view.gui;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;

@@ -1,6 +1,6 @@
-package view;
+package lesson.view;
 
-import view.gui.LoginForm;
+import lesson.view.gui.LoginForm;
 
 public class StartViewGUI {
 

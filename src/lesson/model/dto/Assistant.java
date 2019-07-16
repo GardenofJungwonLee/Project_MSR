@@ -2,15 +2,15 @@ package lesson.model.dto;
 
 import lombok.Data;
 
-	@Data
-	public class Assistant extends People {
-		int month;
-		
+@Data
+public class Assistant extends People {
+	int month;
+
 	public Assistant(String name, int age, int wage, int month) {
-			super(name, age, wage);
-			this.month= month;
-		}
-		
+		super(name, age, wage);
+		this.month = month;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -19,7 +19,6 @@ import lombok.Data;
 		builder.append(month);
 		builder.append(" °³¿ù]");
 		return builder.toString();
-	}	
-		
 	}
 
+}

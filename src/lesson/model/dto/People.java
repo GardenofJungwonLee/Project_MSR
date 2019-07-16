@@ -17,7 +17,7 @@ public class People {
 		builder.append(name);
 		builder.append(", 나이 : ");
 		builder.append(age);
-		builder.append(" 살, 월급 : ");
+		builder.append(" 살, 연봉 : ");
 		builder.append(wage);
 		builder.append(" 만원");
 		return builder.toString();

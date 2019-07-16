@@ -1,4 +1,4 @@
-package view;
+package lesson.view;
 
 public class FailView {
 	public static void failMessageView(String message) {
