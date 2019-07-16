@@ -5,7 +5,6 @@ import java.util.Scanner;
 import lesson.controller.LessonController;
 import lesson.log.Admin;
 import lesson.log.Common;
-import lesson.log.Log4J;
 import lesson.model.dto.Area;
 import lesson.model.dto.Assistant;
 import lesson.model.dto.Lesson;
@@ -23,7 +22,7 @@ public class StartView {
 		if (id.equals("Admin")) {
 			Admin.login();
 			adminAuthority = true;
-		} else if (id.equals("khk")) {
+		} else if (id.equals("Teacher")) {
 			Common.login();
 		} else {
 			System.out.println("존재하지 않는 ID입니다!");

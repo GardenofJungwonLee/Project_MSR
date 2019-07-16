@@ -2,7 +2,7 @@ package lesson.view;
 
 import lesson.view.gui.LoginForm;
 
-public class StartViewGUI {
+public class ViewGUI {
 
 	public static void main(String[] args) {
 		new LoginForm();
