@@ -29,7 +29,6 @@ public class StartView {
 			return;}
 		// 메인 기능
 		LessonController controller = LessonController.getInstance();
-
 		System.out.println("== 전체 강의 검색 ==");
 		controller.infoListView();
 		

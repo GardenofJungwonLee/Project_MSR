@@ -25,7 +25,7 @@ public class MainFrame extends JFrame {
 
 	public MainFrame() {
 		// 프레임
-		this.setSize(360, 480); // 프레임 개체 생성 및 제목 설정
+		this.setSize(360, 120); // 프레임 개체 생성 및 제목 설정
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // X 버튼 클릭시 종료
 		// 창 위치
 		Toolkit kit = Toolkit.getDefaultToolkit();
@@ -38,8 +38,8 @@ public class MainFrame extends JFrame {
 		displayPanel.setLayout(new FlowLayout());
 		JLabel label = new JLabel("메가스터디 영어 강의 관리 프로그램");
 		displayPanel.add(label);
-		getContentPane().add(buttonPanel, BorderLayout.NORTH); // 레이아웃끼리 정렬
-		getContentPane().add(displayPanel);
+		getContentPane().add(buttonPanel); // 레이아웃끼리 정렬
+		getContentPane().add(displayPanel, BorderLayout.NORTH);
 		// show
 		this.setVisible(true);
 		this.setResizable(false);
