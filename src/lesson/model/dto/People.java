@@ -13,13 +13,13 @@ public class People {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("[ÀÌ¸§ : ");
+		builder.append("[ì´ë¦„ : ");
 		builder.append(name);
-		builder.append(", ³ªÀÌ : ");
+		builder.append(", ë‚˜ì´ : ");
 		builder.append(age);
-		builder.append(" »ì, ¿¬ºÀ : ");
+		builder.append(" ì‚´, ì—°ë´‰ : ");
 		builder.append(wage);
-		builder.append(" ¸¸¿ø");
+		builder.append(" ë§Œì›");
 		return builder.toString();
 	}
 }

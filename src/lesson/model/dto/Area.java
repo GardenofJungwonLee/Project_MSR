@@ -13,13 +13,13 @@ public class Area {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("[ÁöÁ¡¸í : ");
+		builder.append("[ì§€ì ëª… : ");
 		builder.append(areaName);
-		builder.append(", ÀÎ¿ø¼ö : ");
+		builder.append(", ì¸ì›ìˆ˜ : ");
 		builder.append(areaHeadCount);
-		builder.append(" ¸í, Æò±Õ ¼ö°­»ı µî±Ş : ");
+		builder.append(" ëª…, í‰ê·  ìˆ˜ê°•ìƒ ë“±ê¸‰ : ");
 		builder.append(areaScore);
-		builder.append(" µî±Ş]");
+		builder.append(" ë“±ê¸‰]");
 		return builder.toString();
 	}
 }

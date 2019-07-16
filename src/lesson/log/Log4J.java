@@ -12,20 +12,20 @@ public class Log4J {
 	}
 
 	public String info(String name) {
-		return "¾È³çÇÏ¼¼¿ä, " + name + "´Ô";
+		return "ì•ˆë…•í•˜ì„¸ìš”, " + name + "ë‹˜";
 	}
 
 	public String warn() {
-		return "±ÇÇÑÀÌ ¾ø½À´Ï´Ù";
+		return "ê¶Œí•œì´ ì—†ìŠµë‹ˆë‹¤";
 
 	}
 
 	public String error() {
-		return "¿äÃ»ÇÏ½Å Á¤º¸¸¦ ¼öÇàÇÒ ¼ö ¾ø½À´Ï´Ù";
+		return "ìš”ì²­í•˜ì‹  ì •ë³´ë¥¼ ìˆ˜í–‰í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤";
 	}
 
 	public String right() {
-		return "¿äÃ»ÇÏ½Å Á¤º¸¸¦ ¼öÇàÇÏ¿´½À´Ï´Ù";
+		return "ìš”ì²­í•˜ì‹  ì •ë³´ë¥¼ ìˆ˜í–‰í•˜ì˜€ìŠµë‹ˆë‹¤";
 	}
 
 }

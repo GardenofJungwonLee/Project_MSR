@@ -17,26 +17,17 @@ public class LessonInfo {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("1. °­ÀÇÄÚµå : ");
+		builder.append("1. ê°•ì˜ì½”ë“œ : ");
 		builder.append(serialNumber);
-		builder.append("\n2. °­ÀÇÁ¤º¸ : ");
+		builder.append("\n2. ê°•ì˜ì •ë³´ : ");
 		builder.append(lesson);
-		builder.append("\n3. °­ÀÇ ¼±»ı´Ô : ");
+		builder.append("\n3. ê°•ì˜ ì„ ìƒë‹˜ : ");
 		builder.append(teacher);
-		builder.append("\n4. º¸Á¶ ¼±»ı´Ô : ");
+		builder.append("\n4. ë³´ì¡° ì„ ìƒë‹˜ : ");
 		builder.append(assistant);
-		builder.append("\n5. Áö¿ª : ");
+		builder.append("\n5. ì§€ì—­ : ");
 		builder.append(area);
 		return builder.toString();
 	}
-
-/*public static void main(String[] args) {
-	Lesson l = new Lesson("Áı¿¡", 1, 1);
-	Teacher t = new Teacher("ÀÌÁ¤¿ø", 25, 3000, "SSS", 100);
-	Assistant as = new Assistant("º¯¿µÀÎ", 25, 30, 1);
-	Area ar = new Area("¿£ÄÚ¾Æ", 30, 4);
-	LessonInfo test = new LessonInfo("ENG001", l, t, as, ar);
-	System.out.println(test);
-}*/
 
 }

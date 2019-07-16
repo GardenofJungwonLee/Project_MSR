@@ -6,27 +6,27 @@ import lesson.model.dto.LessonInfo;
 import net.sf.json.JSONArray;
 
 public class EndView {
-	//¸ğµç °­ÀÇ Ãâ·Â
+	//ëª¨ë“  ê°•ì˜ ì¶œë ¥
 	public static void infoListView(ArrayList<LessonInfo> infoList) {
 		for (int i = 0; i < infoList.size(); i++) {
-			System.out.println("[°­ÀÇ " + (i + 1) + "]\n" + infoList.get(i) + "\n");
+			System.out.println("[ê°•ì˜ " + (i + 1) + "]\n" + infoList.get(i) + "\n");
 		}
 	}
-	//ÀÏ¹İ ¸Ş¼¼Áö Ãâ·Â
+	//ì¼ë°˜ ë©”ì„¸ì§€ ì¶œë ¥
 	public static void messageView(String message) {
 		System.out.println(message);
 	}
-	//°³º° °­ÀÇ Ãâ·Â(°­ÀÇ Á¦¸ñ±âÁØ)
+	//ê°œë³„ ê°•ì˜ ì¶œë ¥(ê°•ì˜ ì œëª©ê¸°ì¤€)
 	public static void infoViewByTitle(LessonInfo info) {
 		System.out.println(info);
 	}
-	//°³º° °­ÀÇ Ãâ·Â(¼±»ı´Ô ÀÌ¸§±âÁØ)
+	//ê°œë³„ ê°•ì˜ ì¶œë ¥(ì„ ìƒë‹˜ ì´ë¦„ê¸°ì¤€)
 	public static void infoViewByTeacher(ArrayList<LessonInfo> infoList) {
 		for(LessonInfo info : infoList) {
 			System.out.println(info);
 		}	
 	}
-	//json array Ãâ·Â
+	//json array ì¶œë ¥
 	public static void jsonView(JSONArray jsonArray) {
 		for (int i = 0; i < jsonArray.size(); i++) {
 			System.out.println(jsonArray.get(i));	

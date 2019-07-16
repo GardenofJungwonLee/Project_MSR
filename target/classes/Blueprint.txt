@@ -1,0 +1,67 @@
+project
+
+1. 주제 :메가스터디 강의 리스트(외국어)
+2. 구성 : mvc
+	1.개설강좌:제목(외국어)
+			기간 
+			가격
+	2. 선생님(상속: 강의 선생님, 보조선생님): 이름, 나이, 월급, -강의 선생님: 수준(Star/Best/Good), 경력(year)
+											-보조 선생님: 기간(month
+	3. 강의 지역: 지역명, 인명수, 평균 점수 
+	
+3. 기능:CRUD(개별검색: 강좌제목,강의선생님/ 삭제:강좌제목/추가-강의추가/업데이트:강의이름, 선생님, 지역)
+	  singletone 
+	  mvc
+	  
+기능	- 모두 검색 => lessonlist안에 있는 모든 info를 리턴
+	- 개별 검색 (강좌제목, 강의선생님)
+		=> 강좌제목 - 중복X
+		=> 강의선생님 - 여러 값.
+	- 추가
+	- 삭제 (강좌제목)
+	- 업데이트 (강의 이름, 선생님, 지역)
+	(- 할인 ~ 가격)
+===================================================	
+	gui
+	  log4j
+	
+도커
+
+16일
+발표 후 코드 리뷰 하고 깃허브 포크해서 옮기기
+발표: 허접스.. 안해두됨 ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ
+
+
+for의 문법
+for(int i = 0; i < db.getLessonList().size(); i++) {
+			System.out.println(db.getLessonList().get(i));
+		}
+		cf. array는 length고 arraylist는 size이다
+for each 문법
+	for(LessonInfo lsInfo : db.getLessonList()) {
+		System.out.println(lsInfo);
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

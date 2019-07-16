@@ -24,23 +24,23 @@ public class InsertWindow extends JFrame implements ActionListener {
 	JButton search;
 
 	public InsertWindow() {
-		// ÇÁ·¹ÀÓ
-		this.setSize(240, 120); // ÇÁ·¹ÀÓ °³Ã¼ »ı¼º ¹× Á¦¸ñ ¼³Á¤
+		// í”„ë ˆì„
+		this.setSize(240, 120); // í”„ë ˆì„ ê°œì²´ ìƒì„± ë° ì œëª© ì„¤ì •
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		; // X ¹öÆ° Å¬¸¯½Ã Á¾·á
-			// Ã¢ À§Ä¡
+		; // X ë²„íŠ¼ í´ë¦­ì‹œ ì¢…ë£Œ
+			// ì°½ ìœ„ì¹˜
 		Toolkit kit = Toolkit.getDefaultToolkit();
 		Dimension screenSize = kit.getScreenSize();
 		this.setLocation(screenSize.width / 2, screenSize.height / 2);
-		// ÆĞ³Î
+		// íŒ¨ë„
 		panel = new JPanel();
 		panel.setLayout(new FlowLayout());
-		// ÄŞº¸¹Ú½º
-		String[] dropdownList = { "¸ğµç °­ÀÇ °Ë»ö", "°­ÀÇ Á¦¸ñ °Ë»ö", "°­»ç ÀÌ¸§ °Ë»ö" };
+		// ì½¤ë³´ë°•ìŠ¤
+		String[] dropdownList = { "ëª¨ë“  ê°•ì˜ ê²€ìƒ‰", "ê°•ì˜ ì œëª© ê²€ìƒ‰", "ê°•ì‚¬ ì´ë¦„ ê²€ìƒ‰" };
 		dropdown = new JComboBox<>(dropdownList);
-		dropdown.setToolTipText("¿øÇÏ´Â °Ë»ö ¹æ½ÄÀ» ¼±ÅÃÇÏ¼¼¿ä");
-		// °Ë»ö¹öÆ°
-		search = new JButton("°Ë»ö");
+		dropdown.setToolTipText("ì›í•˜ëŠ” ê²€ìƒ‰ ë°©ì‹ì„ ì„ íƒí•˜ì„¸ìš”");
+		// ê²€ìƒ‰ë²„íŠ¼
+		search = new JButton("ê²€ìƒ‰");
 		search.addActionListener(this);
 		panel.add(search);
 		panel.add(dropdown);
@@ -54,7 +54,7 @@ public class InsertWindow extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent ae) {
 		Object o = ae.getSource();
 		if (o == search) {
-			JOptionPane.showMessageDialog(null, "°Ë»ö ±â´ÉÀ» ½ÇÇàÇÕ´Ï´Ù");
+			JOptionPane.showMessageDialog(null, "ê²€ìƒ‰ ê¸°ëŠ¥ì„ ì‹¤í–‰í•©ë‹ˆë‹¤");
 		}
 	}
 }

@@ -16,13 +16,13 @@ import javax.swing.JTextField;
 
 import lesson.controller.LessonController;
 
-// https://brian-s.tistory.com/97 ~ ±âÃÊ awt,swing, container µî
-// https://m.blog.naver.com/imf4/220631763652 ~ ±âÃÊ2 jpanel µî
-// https://hallang.tistory.com/137 ~ °æ°íÃ¢ ¸Ş½ÃÁö
+// https://brian-s.tistory.com/97 ~ ê¸°ì´ˆ awt,swing, container ë“±
+// https://m.blog.naver.com/imf4/220631763652 ~ ê¸°ì´ˆ2 jpanel ë“±
+// https://hallang.tistory.com/137 ~ ê²½ê³ ì°½ ë©”ì‹œì§€
 // https://movefast.tistory.com/62 ~ jlabel
-// https://m.blog.naver.com/lbo1989/220783608100 ~ java º¸´õ ¸¸µé±â
-// https://www.crocus.co.kr/551 ~ ·¹ÀÌºí/¶óµğ¿À ¹öÆ°
-// https://movefast.tistory.com/62 ~ ¸®½ºÆ® (¿¬°ü ¹®¼­·Î spiner)
+// https://m.blog.naver.com/lbo1989/220783608100 ~ java ë³´ë” ë§Œë“¤ê¸°
+// https://www.crocus.co.kr/551 ~ ë ˆì´ë¸”/ë¼ë””ì˜¤ ë²„íŠ¼
+// https://movefast.tistory.com/62 ~ ë¦¬ìŠ¤íŠ¸ (ì—°ê´€ ë¬¸ì„œë¡œ spiner)
 public class ReadWindow extends JFrame implements ActionListener {
 	JPanel panel;
 	JComboBox<String> dropdown;
@@ -31,19 +31,19 @@ public class ReadWindow extends JFrame implements ActionListener {
 	LessonController controller = LessonController.getInstance();
 
 	public ReadWindow() {
-		// ÇÁ·¹ÀÓ
-		this.setSize(240, 120); // ÇÁ·¹ÀÓ °³Ã¼ »ı¼º ¹× Á¦¸ñ ¼³Á¤
+		// í”„ë ˆì„
+		this.setSize(240, 120); // í”„ë ˆì„ ê°œì²´ ìƒì„± ë° ì œëª© ì„¤ì •
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		; // X ¹öÆ° Å¬¸¯½Ã Á¾·á
-			// Ã¢ À§Ä¡
+		; // X ë²„íŠ¼ í´ë¦­ì‹œ ì¢…ë£Œ
+			// ì°½ ìœ„ì¹˜
 		Toolkit kit = Toolkit.getDefaultToolkit();
 		Dimension screenSize = kit.getScreenSize();
 		this.setLocation(screenSize.width / 2, screenSize.height / 2);
-		// ÆĞ³Î
+		// íŒ¨ë„
 		panel = new JPanel();
 		panel.setLayout(new FlowLayout());
-		// ÄŞº¸¹Ú½º
-		String[] dropdownList = { "°­ÀÇ Á¦¸ñ °Ë»ö", "°­»ç ÀÌ¸§ °Ë»ö", "¸ğµç °­ÀÇ °Ë»ö" };
+		// ì½¤ë³´ë°•ìŠ¤
+		String[] dropdownList = { "ê°•ì˜ ì œëª© ê²€ìƒ‰", "ê°•ì‚¬ ì´ë¦„ ê²€ìƒ‰", "ëª¨ë“  ê°•ì˜ ê²€ìƒ‰" };
 		dropdown = new JComboBox<>(dropdownList);
 		dropdown.addActionListener(new ActionListener() {
 			@Override
@@ -57,8 +57,8 @@ public class ReadWindow extends JFrame implements ActionListener {
 				}
 			}
 		});
-		// °Ë»ö¹öÆ°
-		search = new JButton("°Ë»ö");
+		// ê²€ìƒ‰ë²„íŠ¼
+		search = new JButton("ê²€ìƒ‰");
 		search.addActionListener(this);
 		searchKeyword = new JTextField(20);
 		panel.add(dropdown);
@@ -78,13 +78,13 @@ public class ReadWindow extends JFrame implements ActionListener {
 			int index = dropdown.getSelectedIndex();
 			String text = searchKeyword.getText();
 			if (index == 0) {
-				JOptionPane.showMessageDialog(null, "°­ÀÇ Á¦¸ñ °Ë»öÀ» ½ÇÇàÇÕ´Ï´Ù (°Ë»ö¾î :" + text + ")");
+				JOptionPane.showMessageDialog(null, "ê°•ì˜ ì œëª© ê²€ìƒ‰ì„ ì‹¤í–‰í•©ë‹ˆë‹¤ (ê²€ìƒ‰ì–´ :" + text + ")");
 				controller.infoViewByTitle(text);
 			} else if (index == 1) {
-				JOptionPane.showMessageDialog(null, "°­»ç ÀÌ¸§ °Ë»öÀ» ½ÇÇàÇÕ´Ï´Ù (°Ë»ö¾î :" + text + ")");
+				JOptionPane.showMessageDialog(null, "ê°•ì‚¬ ì´ë¦„ ê²€ìƒ‰ì„ ì‹¤í–‰í•©ë‹ˆë‹¤ (ê²€ìƒ‰ì–´ :" + text + ")");
 				controller.infoViewByTeacher(text);
 			} else if (index == 2) {
-				JOptionPane.showMessageDialog(null, "¸ğµç °­ÀÇ °Ë»öÀ» ½ÇÇàÇÕ´Ï´Ù");
+				JOptionPane.showMessageDialog(null, "ëª¨ë“  ê°•ì˜ ê²€ìƒ‰ì„ ì‹¤í–‰í•©ë‹ˆë‹¤");
 				controller.infoListView();
 			}
 		}

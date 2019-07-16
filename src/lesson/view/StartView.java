@@ -13,8 +13,8 @@ import lesson.model.dto.Teacher;
 
 public class StartView {
 	public static void main(String[] args) {
-		// Log4J¸¦ ÅëÇÑ ·Î±×ÀÎ °ü¸®
-		System.out.print("ID ÀÔ·Â : ");
+		// Log4Jë¥¼ í†µí•œ ë¡œê·¸ì¸ ê´€ë¦¬
+		System.out.print("ID ì…ë ¥ : ");
 		Scanner scanner = new Scanner(System.in);
 		String id = scanner.next();
 		scanner.close();
@@ -25,48 +25,48 @@ public class StartView {
 		} else if (id.equals("Teacher")) {
 			Common.login();
 		} else {
-			System.out.println("Á¸ÀçÇÏÁö ¾Ê´Â IDÀÔ´Ï´Ù!");
+			System.out.println("ì¡´ì¬í•˜ì§€ ì•ŠëŠ” IDì…ë‹ˆë‹¤!");
 			return;}
-		// ¸ŞÀÎ ±â´É
+		// ë©”ì¸ ê¸°ëŠ¥
 		LessonController controller = LessonController.getInstance();
-		System.out.println("== ÀüÃ¼ °­ÀÇ °Ë»ö ==");
+		System.out.println("== ì „ì²´ ê°•ì˜ ê²€ìƒ‰ ==");
 		controller.infoListView();
 		
-		System.out.println("== °­ÀÇ Á¦¸ñ °Ë»ö ==");
-		controller.infoViewByTitle("[EBS´Â ´Ü¿¬, Á¶Á¤½Ä] EBS º¯Çü¹®Á¦ ÆĞÅ°Áö");
+		System.out.println("== ê°•ì˜ ì œëª© ê²€ìƒ‰ ==");
+		controller.infoViewByTitle("[EBSëŠ” ë‹¨ì—°, ì¡°ì •ì‹] EBS ë³€í˜•ë¬¸ì œ íŒ¨í‚¤ì§€");
 
-		System.out.println("\n== ¼±»ı´Ô ÀÌ¸§ °Ë»ö ==");
-		controller.infoViewByTeacher("ºô¸®");
+		System.out.println("\n== ì„ ìƒë‹˜ ì´ë¦„ ê²€ìƒ‰ ==");
+		controller.infoViewByTeacher("ë¹Œë¦¬");
 
-		System.out.println("\n== °­ÀÇ Ãß°¡ ÈÄ ¼±»ı´Ô ÀÌ¸§ °Ë»ö ==");
+		System.out.println("\n== ê°•ì˜ ì¶”ê°€ í›„ ì„ ìƒë‹˜ ì´ë¦„ ê²€ìƒ‰ ==");
 		if (adminAuthority) {
 		controller.insertLessonInfo(
 				new LessonInfo("ENG008", 
-				new Lesson("ÃµÀÏ¹® ÇÙ½É (5ÁÖ¿¡ ³¡³»´Â ÇÙ½É ¹®¹ı, ±¸¹® ÃÑÁ¤¸®)", 2, 9),
-				new Teacher("±è±âÈÆ", 50, 8000, "Good", 20), 
-				new Assistant("º¯¿µÀÎ", 38, 8500, 90),
-				new Area("ºĞ´ç±¸", 200, 4)));
-		} else {System.out.println("±ÇÇÑÀÌ ¾ø½À´Ï´Ù!");}
-		controller.infoViewByTeacher("±è±âÈÆ");
+				new Lesson("ì²œì¼ë¬¸ í•µì‹¬ (5ì£¼ì— ëë‚´ëŠ” í•µì‹¬ ë¬¸ë²•, êµ¬ë¬¸ ì´ì •ë¦¬)", 2, 9),
+				new Teacher("ê¹€ê¸°í›ˆ", 50, 8000, "Good", 20), 
+				new Assistant("ë³€ì˜ì¸", 38, 8500, 90),
+				new Area("ë¶„ë‹¹êµ¬", 200, 4)));
+		} else {System.out.println("ê¶Œí•œì´ ì—†ìŠµë‹ˆë‹¤!");}
+		controller.infoViewByTeacher("ê¹€ê¸°í›ˆ");
 	
-		System.out.println("\n== °­ÀÇ »èÁ¦ ÈÄ ¼±»ı´Ô ÀÌ¸§ °Ë»ö ==");
+		System.out.println("\n== ê°•ì˜ ì‚­ì œ í›„ ì„ ìƒë‹˜ ì´ë¦„ ê²€ìƒ‰ ==");
 		if (adminAuthority) {
-		controller.deleteLessonInfo("[EBS´Â ´Ü¿¬, Á¶Á¤½Ä] EBS º¯Çü¹®Á¦ ÆĞÅ°Áö");
-		} else {System.out.println("±ÇÇÑÀÌ ¾ø½À´Ï´Ù!");}
-		controller.infoViewByTeacher("Á¶Á¤½Ä");
+		controller.deleteLessonInfo("[EBSëŠ” ë‹¨ì—°, ì¡°ì •ì‹] EBS ë³€í˜•ë¬¸ì œ íŒ¨í‚¤ì§€");
+		} else {System.out.println("ê¶Œí•œì´ ì—†ìŠµë‹ˆë‹¤!");}
+		controller.infoViewByTeacher("ì¡°ì •ì‹");
 		
-		System.out.println("\n== º¸Á¶¼±»ı´Ô ¼öÁ¤ ÈÄ ¼±»ı´Ô ÀÌ¸§ °Ë»ö ==");
+		System.out.println("\n== ë³´ì¡°ì„ ìƒë‹˜ ìˆ˜ì • í›„ ì„ ìƒë‹˜ ì´ë¦„ ê²€ìƒ‰ ==");
 		if (adminAuthority) {
-		controller.updateLessonInfo("ÃµÀÏ¹® ÇÙ½É (5ÁÖ¿¡ ³¡³»´Â ÇÙ½É ¹®¹ı, ±¸¹® ÃÑÁ¤¸®)", 
-				new Assistant("º¯¿µÈØ", 40, 7500, 10));
-		} else {System.out.println("±ÇÇÑÀÌ ¾ø½À´Ï´Ù!");}
-		controller.infoViewByTeacher("±è±âÈÆ");
+		controller.updateLessonInfo("ì²œì¼ë¬¸ í•µì‹¬ (5ì£¼ì— ëë‚´ëŠ” í•µì‹¬ ë¬¸ë²•, êµ¬ë¬¸ ì´ì •ë¦¬)", 
+				new Assistant("ë³€ì˜íœœ", 40, 7500, 10));
+		} else {System.out.println("ê¶Œí•œì´ ì—†ìŠµë‹ˆë‹¤!");}
+		controller.infoViewByTeacher("ê¹€ê¸°í›ˆ");
 		
-		System.out.println("\n== json°´Ã¼ º¯È¯ ¹× Ãâ·Â ==");
+		System.out.println("\n== jsonê°ì²´ ë³€í™˜ ë° ì¶œë ¥ ==");
 		EndView.jsonView(controller.jsonConvert());
 	
-		System.out.println("\n== °­ÁÂ °¡°İ ÇÒÀÎ ==");
-		controller.discountLessonPrice("[2020 NEW È®½ÇÇØ! ÆĞÅ°Áö] ºóÄ­Æí + ¼ø¼­»ğÀÔÆí", 40);
-		controller.infoViewByTeacher("ºô¸®");
+		System.out.println("\n== ê°•ì¢Œ ê°€ê²© í• ì¸ ==");
+		controller.discountLessonPrice("[2020 NEW í™•ì‹¤í•´! íŒ¨í‚¤ì§€] ë¹ˆì¹¸í¸ + ìˆœì„œì‚½ì…í¸", 40);
+		controller.infoViewByTeacher("ë¹Œë¦¬");
 		}
 }

@@ -15,9 +15,9 @@ public class Assistant extends People {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append(super.toString());
-		builder.append(", ±â°£ : ");
+		builder.append(", ê¸°ê°„ : ");
 		builder.append(month);
-		builder.append(" °³¿ù]");
+		builder.append(" ê°œì›”]");
 		return builder.toString();
 	}
 

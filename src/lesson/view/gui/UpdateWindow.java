@@ -16,13 +16,13 @@ import javax.swing.JTextField;
 import lesson.log.Admin;
 import lesson.log.Common;
 
-// https://brian-s.tistory.com/97 ~ ±âÃÊ awt,swing, container µî
-// https://m.blog.naver.com/imf4/220631763652 ~ ±âÃÊ2 jpanel µî
-// https://hallang.tistory.com/137 ~ °æ°íÃ¢ ¸Ş½ÃÁö
+// https://brian-s.tistory.com/97 ~ ê¸°ì´ˆ awt,swing, container ë“±
+// https://m.blog.naver.com/imf4/220631763652 ~ ê¸°ì´ˆ2 jpanel ë“±
+// https://hallang.tistory.com/137 ~ ê²½ê³ ì°½ ë©”ì‹œì§€
 // https://movefast.tistory.com/62 ~ jlabel
-// https://m.blog.naver.com/lbo1989/220783608100 ~ java º¸´õ ¸¸µé±â
-// https://www.crocus.co.kr/551 ~ ·¹ÀÌºí/¶óµğ¿À ¹öÆ°
-// https://movefast.tistory.com/62 ~ ¸®½ºÆ® (¿¬°ü ¹®¼­·Î spiner)
+// https://m.blog.naver.com/lbo1989/220783608100 ~ java ë³´ë” ë§Œë“¤ê¸°
+// https://www.crocus.co.kr/551 ~ ë ˆì´ë¸”/ë¼ë””ì˜¤ ë²„íŠ¼
+// https://movefast.tistory.com/62 ~ ë¦¬ìŠ¤íŠ¸ (ì—°ê´€ ë¬¸ì„œë¡œ spiner)
 public class UpdateWindow extends JFrame implements ActionListener {
 	JPanel panel1, panel2;
 	JTextField id;
@@ -34,26 +34,26 @@ public class UpdateWindow extends JFrame implements ActionListener {
 	}
 	
 	public UpdateWindow() {
-		// ÇÁ·¹ÀÓ
-		this.setSize(240, 120); // ÇÁ·¹ÀÓ °³Ã¼ »ı¼º ¹× Á¦¸ñ ¼³Á¤
+		// í”„ë ˆì„
+		this.setSize(240, 120); // í”„ë ˆì„ ê°œì²´ ìƒì„± ë° ì œëª© ì„¤ì •
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		; // X ¹öÆ° Å¬¸¯½Ã Á¾·á
-		// Ã¢ À§Ä¡
+		; // X ë²„íŠ¼ í´ë¦­ì‹œ ì¢…ë£Œ
+		// ì°½ ìœ„ì¹˜
 		Toolkit kit = Toolkit.getDefaultToolkit();
 		Dimension screenSize = kit.getScreenSize();
 		this.setLocation(screenSize.width / 2, screenSize.height / 2);
-		// ÆĞ³Î1 (¾ÆÀÌµğ)
+		// íŒ¨ë„1 (ì•„ì´ë””)
 		panel1 = new JPanel();
-//		panel1.setLayout(new GridLayout(1,2)); // 1Çà 2¿­·Î È­¸éÀ» ºĞÇÒ
-		panel1.setLayout(new FlowLayout()); // 1Çà 2¿­·Î È­¸éÀ» ºĞÇÒ
+//		panel1.setLayout(new GridLayout(1,2)); // 1í–‰ 2ì—´ë¡œ í™”ë©´ì„ ë¶„í• 
+		panel1.setLayout(new FlowLayout()); // 1í–‰ 2ì—´ë¡œ í™”ë©´ì„ ë¶„í• 
 		id = new JTextField(10);
 		panel1.add(new JLabel("ID", JLabel.LEFT));
 		panel1.add(id);
-		id.setToolTipText("ID¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
-		// ÆĞ³Î2 (¹öÆ°)
+		id.setToolTipText("IDë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+		// íŒ¨ë„2 (ë²„íŠ¼)
 		panel2 = new JPanel();
-		confirm = new JButton("È®ÀÎ");
-		cancel = new JButton("Ãë¼Ò");
+		confirm = new JButton("í™•ì¸");
+		cancel = new JButton("ì·¨ì†Œ");
 		confirm.addActionListener(this);
 		cancel.addActionListener(this);
 		panel2.add(confirm);
@@ -71,7 +71,7 @@ public class UpdateWindow extends JFrame implements ActionListener {
 		String inputText = id.getText().trim();
 		if (o==confirm) {
 			if (Admin.getAdminID().equals(inputText)) {
-				JOptionPane.showMessageDialog(null, Admin.loginGUI()); // °æ°íÃ¢ ¶ç¿ì±â
+				JOptionPane.showMessageDialog(null, Admin.loginGUI()); // ê²½ê³ ì°½ ë„ìš°ê¸°
 				this.setVisible(false);
 			} else if (Common.getIdList().contains(inputText)) {
 				JOptionPane.showMessageDialog(null, Common.loginGUI(inputText));

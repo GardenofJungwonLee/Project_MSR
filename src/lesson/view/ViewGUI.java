@@ -6,6 +6,6 @@ public class ViewGUI {
 
 	public static void main(String[] args) {
 		new LoginForm();
-		// Log4J¿Í ¼¯¾î¼­ + buttonÀ¸·Î ±â´É ±¸Çö + panel¿¡ view Ãâ·Â
+		// Log4Jì™€ ì„ì–´ì„œ + buttonìœ¼ë¡œ ê¸°ëŠ¥ êµ¬í˜„ + panelì— view ì¶œë ¥
 	}
 }

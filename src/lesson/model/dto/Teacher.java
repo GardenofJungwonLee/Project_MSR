@@ -17,11 +17,11 @@ public class Teacher extends People {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append(super.toString());
-		builder.append(", °­»çµî±Þ : ");
+		builder.append(", ê°•ì‚¬ë“±ê¸‰ : ");
 		builder.append(level);
-		builder.append(", °æ·Â : ");
+		builder.append(", ê²½ë ¥ : ");
 		builder.append(careerYear);
-		builder.append(" ³â]");
+		builder.append(" ë…„]");
 		return builder.toString();
 	}
 

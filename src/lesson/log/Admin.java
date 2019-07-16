@@ -6,12 +6,12 @@ public class Admin {
 	private static boolean adminAuthority;
 
 	public static void login() {
-		System.out.println(log.info("包府磊"));
+		System.out.println(log.info("甏�毽瀽"));
 	}
 
 	public static String loginGUI() {
 		adminAuthority = true;
-		return log.info("包府磊");
+		return log.info("甏�毽瀽");
 	}
 
 	public static void loginFail() {

@@ -13,25 +13,25 @@ public class LessonModelVirtualDB {
 	private ArrayList<LessonInfo> lessonInfoList = new ArrayList<>();
 
 	private  LessonModelVirtualDB() {
-		Teacher teacher1 = new Teacher("Á¶Á¤½Ä", 37, 10000, "Star", 7);
-		Teacher teacher2 = new Teacher("±è±âÈÆ", 50, 8000, "Good", 20);
-		Teacher teacher3 = new Teacher("ºô¸®", 32, 7500, "Best", 3);
-		Assistant assistant1 = new Assistant("ÀÌÁ¤¿ø", 29, 5000, 16);
-		Assistant assistant2 = new Assistant("º¯¿µÀÎ", 34, 2500, 32);
-		Assistant assistant3 = new Assistant("¾ÆÀÏ¸®½Ã", 28, 3500, 6);
-		LessonInfo lsInfo = new LessonInfo("ENG001", new Lesson("[EBS´Â ´Ü¿¬, Á¶Á¤½Ä] EBS º¯Çü¹®Á¦ ÆĞÅ°Áö", 2, 18),
-				teacher1, assistant1, new Area("°­³²±¸", 200, 1));
+		Teacher teacher1 = new Teacher("ì¡°ì •ì‹", 37, 10000, "Star", 7);
+		Teacher teacher2 = new Teacher("ê¹€ê¸°í›ˆ", 50, 8000, "Good", 20);
+		Teacher teacher3 = new Teacher("ë¹Œë¦¬", 32, 7500, "Best", 3);
+		Assistant assistant1 = new Assistant("ì´ì •ì›", 29, 5000, 16);
+		Assistant assistant2 = new Assistant("ë³€ì˜ì¸", 34, 2500, 32);
+		Assistant assistant3 = new Assistant("ì•„ì¼ë¦¬ì‹œ", 28, 3500, 6);
+		LessonInfo lsInfo = new LessonInfo("ENG001", new Lesson("[EBSëŠ” ë‹¨ì—°, ì¡°ì •ì‹] EBS ë³€í˜•ë¬¸ì œ íŒ¨í‚¤ì§€", 2, 18),
+				teacher1, assistant1, new Area("ê°•ë‚¨êµ¬", 200, 1));
 		lessonInfoList.add(lsInfo);		
-		lsInfo = new LessonInfo("ENG002", new Lesson("[2020 NEW] ±âº»±â ÆĞÅ°Áö (ÃµÀÏ¹® ¿Ï¼º X Reading Skills)", 7, 22),
-				teacher2, assistant2, new Area("¼­´ë¹®±¸", 300, 3));
+		lsInfo = new LessonInfo("ENG002", new Lesson("[2020 NEW] ê¸°ë³¸ê¸° íŒ¨í‚¤ì§€ (ì²œì¼ë¬¸ ì™„ì„± X Reading Skills)", 7, 22),
+				teacher2, assistant2, new Area("ì„œëŒ€ë¬¸êµ¬", 300, 3));
 		lessonInfoList.add(lsInfo);
 		lsInfo = new LessonInfo(
-				"ENG003", new Lesson("[2020 NEW È®½ÇÇØ! ÆĞÅ°Áö] ºóÄ­Æí + ¼ø¼­»ğÀÔÆí", 3 , 21),
-				teacher3, assistant3, new Area("¼­ÃÊ±¸" , 1000, 1));
+				"ENG003", new Lesson("[2020 NEW í™•ì‹¤í•´! íŒ¨í‚¤ì§€] ë¹ˆì¹¸í¸ + ìˆœì„œì‚½ì…í¸", 3 , 21),
+				teacher3, assistant3, new Area("ì„œì´ˆêµ¬" , 1000, 1));
 		lessonInfoList.add(lsInfo);
 		lsInfo = new LessonInfo(
-				"ENG004", new Lesson("¾î¹ı ³¡! 5.0 (°æ»ç°ü±îÁö ´ëºñÇÏ´Â ¼ö´É ¾î¹ı ½ÉÈ­ ¹®Á¦Ç®ÀÌ)", 2 , 10),
-				teacher3, assistant3, new Area("¼­ÃÊ±¸", 1250, 4));
+				"ENG004", new Lesson("ì–´ë²• ë! 5.0 (ê²½ì‚¬ê´€ê¹Œì§€ ëŒ€ë¹„í•˜ëŠ” ìˆ˜ëŠ¥ ì–´ë²• ì‹¬í™” ë¬¸ì œí’€ì´)", 2 , 10),
+				teacher3, assistant3, new Area("ì„œì´ˆêµ¬", 1250, 4));
 		lessonInfoList.add(lsInfo);
 	}
 
@@ -40,17 +40,17 @@ public class LessonModelVirtualDB {
 		return instance;
 	}
 
-	// infoList ¸®ÅÏ
+	// infoList ë¦¬í„´
 	public ArrayList<LessonInfo> getLessonInfoList() {
 		return instance.lessonInfoList;
 	}
 
-	// info Ãß°¡
+	// info ì¶”ê°€
 	public void insertInfo(LessonInfo lessonInfo) {
 		lessonInfoList.add(lessonInfo);
 	}
 
-	// info »èÁ¦
+	// info ì‚­ì œ
 	public void deleteInfo(LessonInfo lessonInfo) {
 		lessonInfoList.remove(lessonInfo);
 	}

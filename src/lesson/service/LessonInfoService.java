@@ -20,11 +20,11 @@ public class LessonInfoService {
 	public static LessonInfoService getInstance() {
 		return instance;
 	}
-	// ¸ğµç lessonInfo ¸®ÅÏ
+	// ëª¨ë“  lessonInfo ë¦¬í„´
 	public ArrayList<LessonInfo> getAllLessonInfos() {
 		return infoVirtualData.getLessonInfoList();
 	}
-	// °­ÀÇ Á¦¸ñÀ¸·Î °Ë»öÇÏ¿© lessonInfo ¸®ÅÏ
+	// ê°•ì˜ ì œëª©ìœ¼ë¡œ ê²€ìƒ‰í•˜ì—¬ lessonInfo ë¦¬í„´
 	public LessonInfo getLessonInfoByTitle(String lessonName) {
 		for (LessonInfo info : getAllLessonInfos()) {
 			if (info != null && info.getLesson().getTitle().equals(lessonName)) {
@@ -33,7 +33,7 @@ public class LessonInfoService {
 		}
 		return null;
 	}
-	// ¼±»ı´Ô ÀÌ¸§À¸·Î °Ë»öÇÏ¿© lessonInfo ¸®ÅÏ
+	// ì„ ìƒë‹˜ ì´ë¦„ìœ¼ë¡œ ê²€ìƒ‰í•˜ì—¬ lessonInfo ë¦¬í„´
 	public ArrayList<LessonInfo> getLessonInfoByTeacher(String teacherName) {
 		ArrayList<LessonInfo> infoList = new ArrayList<LessonInfo>();
 		for (LessonInfo info : getAllLessonInfos()) {
@@ -43,40 +43,40 @@ public class LessonInfoService {
 		}
 		return infoList;
 	}
-	// info Ãß°¡
+	// info ì¶”ê°€
 	public void infoInsert(LessonInfo newInfo) {
 		infoVirtualData.insertInfo(newInfo);
 	}
-	// info »èÁ¦ (lessonName ±âÁØ)
+	// info ì‚­ì œ (lessonName ê¸°ì¤€)
 	public void infoDelete(String lessonName) throws NotExistException {
 		LessonInfo info = getLessonInfoByTitle(lessonName);
 		if (info == null) {
-			throw new NotExistException("xx ÇØ´ç ÀÌ¸§ÀÇ °­ÀÇ´Â Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù. xx\n");
+			throw new NotExistException("xx í•´ë‹¹ ì´ë¦„ì˜ ê°•ì˜ëŠ” ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. xx\n");
 		} else {
 			infoVirtualData.deleteInfo(info);
 		}
 	}
-	// info ¼öÁ¤ (¼±»ı´Ô ¼öÁ¤)
+	// info ìˆ˜ì • (ì„ ìƒë‹˜ ìˆ˜ì •)
 	public void infoUpdate(String lessonName, People people) throws NotExistException {
 		LessonInfo info = getLessonInfoByTitle(lessonName);
 		if (info == null) {
-			throw new NotExistException("xx ÇØ´ç ÀÌ¸§ÀÇ °­ÀÇ´Â Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù. xx\n");
+			throw new NotExistException("xx í•´ë‹¹ ì´ë¦„ì˜ ê°•ì˜ëŠ” ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. xx\n");
 		} else if(people instanceof Teacher) {
 			info.setTeacher((Teacher)people);
 		} else if(people instanceof Assistant) {
 			info.setAssistant((Assistant)people);
 		} 
 	}
-	// info ¼öÁ¤ (°¡°İ °ª ÇÒÀÎÇÏ¿© ¼öÁ¤)
+	// info ìˆ˜ì • (ê°€ê²© ê°’ í• ì¸í•˜ì—¬ ìˆ˜ì •)
 	public void priceDiscount(String lessonName, int discountRate) throws NotExistException {
 		LessonInfo info = getLessonInfoByTitle(lessonName);
 		if (info == null) {
-			throw new NotExistException("xx ÇØ´ç ÀÌ¸§ÀÇ °­ÀÇ´Â Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù. xx\\n");
+			throw new NotExistException("xx í•´ë‹¹ ì´ë¦„ì˜ ê°•ì˜ëŠ” ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. xx\\n");
 		} else {
 			Lesson lesson = info.getLesson();
 			double beforePrice = lesson.getPrice();
 			lesson.setPrice(beforePrice * (100 - discountRate) / 100);
-			System.out.println(beforePrice + " ¸¸¿ø -> " + lesson.getPrice() + " ¸¸¿ø" + " (" + discountRate + " %)");
+			System.out.println(beforePrice + " ë§Œì› -> " + lesson.getPrice() + " ë§Œì›" + " (" + discountRate + " %)");
 		}
 	}
 }

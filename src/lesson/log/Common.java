@@ -8,7 +8,7 @@ public class Common {
 	private static boolean commonAuthority;
 
 	public static void login() {
-		System.out.println(log.info("È¸¿ø"));
+		System.out.println(log.info("íšŒì›"));
 	}
 
 	public static String loginGUI(String id) {

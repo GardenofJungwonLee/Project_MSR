@@ -18,72 +18,72 @@ public class LessonController {
 	public static LessonController getInstance() {
 		return instance;
 	}
-	// ¸ğµç °­ÀÇ °Ë»ö
+	// ëª¨ë“  ê°•ì˜ ê²€ìƒ‰
 	public void infoListView() {
 		ArrayList<LessonInfo> infoList = service.getAllLessonInfos();
 		if (infoList.size() != 0) {
 			EndView.infoListView(infoList);
 		} else {
-			EndView.messageView("-- ÁøÇà ÁßÀÎ °­ÀÇ°¡ ¾ø½À´Ï´Ù --");
+			EndView.messageView("-- ì§„í–‰ ì¤‘ì¸ ê°•ì˜ê°€ ì—†ìŠµë‹ˆë‹¤ --");
 		}
 	}
-	// Æ¯Á¤ °­ÀÇ °Ë»ö (°­ÀÇ ÀÌ¸§)
+	// íŠ¹ì • ê°•ì˜ ê²€ìƒ‰ (ê°•ì˜ ì´ë¦„)
 	public void infoViewByTitle(String lessonName) {
 		LessonInfo info = service.getLessonInfoByTitle(lessonName);
 		if (info != null) {
 			EndView.infoViewByTitle(info);
 		} else {
-			EndView.messageView("-- ÇØ´ç Á¦¸ñÀÇ °­ÀÇ´Â Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù --");
+			EndView.messageView("-- í•´ë‹¹ ì œëª©ì˜ ê°•ì˜ëŠ” ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤ --");
 		}
 	}
-	// Æ¯Á¤ °­ÀÇ °Ë»ö (¼±»ı´Ô ÀÌ¸§)
+	// íŠ¹ì • ê°•ì˜ ê²€ìƒ‰ (ì„ ìƒë‹˜ ì´ë¦„)
 	public void infoViewByTeacher(String teacherName) {
 		ArrayList<LessonInfo> infoList = service.getLessonInfoByTeacher(teacherName);
 		if (infoList.size() != 0) {
 			EndView.infoViewByTeacher(infoList);
 		} else {
-			EndView.messageView("-- ÇØ´ç ¼±»ı´ÔÀÇ °­ÀÇ´Â Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù --");
+			EndView.messageView("-- í•´ë‹¹ ì„ ìƒë‹˜ì˜ ê°•ì˜ëŠ” ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤ --");
 		}
 	}
-	// »õ·Î¿î °­ÀÇ Ãß°¡
+	// ìƒˆë¡œìš´ ê°•ì˜ ì¶”ê°€
 	public void insertLessonInfo(LessonInfo newInfo) {
 		service.infoInsert(newInfo);
-		EndView.messageView("-- Á¤»óÀûÀ¸·Î Ãß°¡ µÇ¾ú½À´Ï´Ù --");
+		EndView.messageView("-- ì •ìƒì ìœ¼ë¡œ ì¶”ê°€ ë˜ì—ˆìŠµë‹ˆë‹¤ --");
 	}
-	// Á¸ÀçÇÏ´Â °­ÀÇ ¼öÁ¤(ÀÌ¸§ ±âÁØ °Ë»ö, ¼±»ı´Ô ¹Ù²Ù±â)
+	// ì¡´ì¬í•˜ëŠ” ê°•ì˜ ìˆ˜ì •(ì´ë¦„ ê¸°ì¤€ ê²€ìƒ‰, ì„ ìƒë‹˜ ë°”ê¾¸ê¸°)
 	public void updateLessonInfo(String lessonName, People people) {
 		try {
 			service.infoUpdate(lessonName, people);
-			EndView.messageView("-- Á¤»óÀûÀ¸·Î ¼öÁ¤ µÇ¾ú½À´Ï´Ù --");
+			EndView.messageView("-- ì •ìƒì ìœ¼ë¡œ ìˆ˜ì • ë˜ì—ˆìŠµë‹ˆë‹¤ --");
 		} catch (NotExistException e) {
 			FailView.failMessageView(e.getMessage());
 		}
 	}
-	// °­ÀÇ °¡°İ ÇÒÀÎ
+	// ê°•ì˜ ê°€ê²© í• ì¸
 	public void discountLessonPrice(String lessonName, int discountRate) {
 		try {
 			service.priceDiscount(lessonName, discountRate);
-			EndView.messageView("-- Á¤»óÀûÀ¸·Î ¼öÁ¤ µÇ¾ú½À´Ï´Ù --");
+			EndView.messageView("-- ì •ìƒì ìœ¼ë¡œ ìˆ˜ì • ë˜ì—ˆìŠµë‹ˆë‹¤ --");
 		} catch (NotExistException e) {
 			FailView.failMessageView(e.getMessage());
 		}
 	}	
-	// °³º° °­ÀÇ »èÁ¦(°­ÀÇ Á¦¸ñ)
+	// ê°œë³„ ê°•ì˜ ì‚­ì œ(ê°•ì˜ ì œëª©)
 	public void deleteLessonInfo(String infoName) {
 		try {
 			service.infoDelete(infoName);
-			EndView.messageView("-- Á¤»óÀûÀ¸·Î »èÁ¦ µÇ¾ú½À´Ï´Ù --");
+			EndView.messageView("-- ì •ìƒì ìœ¼ë¡œ ì‚­ì œ ë˜ì—ˆìŠµë‹ˆë‹¤ --");
 		} catch (NotExistException e) {
 			FailView.failMessageView(e.getMessage());
 		}
 	}
-	// DB °ªµé jsonArray·Î º¯È¯
+	// DB ê°’ë“¤ jsonArrayë¡œ ë³€í™˜
 	public JSONArray jsonConvert() {
 		JSONArray jsonArray = new JSONArray();
 		for (LessonInfo info : service.getAllLessonInfos()) {
 			jsonArray.add(info);
 		}
-		EndView.messageView("-- Á¤»óÀûÀ¸·Î º¯È¯ µÇ¾ú½À´Ï´Ù --");
+		EndView.messageView("-- ì •ìƒì ìœ¼ë¡œ ë³€í™˜ ë˜ì—ˆìŠµë‹ˆë‹¤ --");
 		return jsonArray;
 	}
 }

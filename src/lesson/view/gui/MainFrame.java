@@ -16,29 +16,29 @@ import javax.swing.JPanel;
 
 import lesson.log.Admin;
 
-// (1) °Ë»ö - ÀüÃ¼ °Ë»ö, °­ÀÇ Á¦¸ñ ±âÁØ °Ë»ö, °­»ç ÀÌ¸§ ±âÁØ °Ë»ö (
-// (1) »ğÀÔ - »õ·Î¿î °­ÀÇ Á¤º¸ »ğÀÔ
-// (3) ¼öÁ¤ - °­ÀÇº° ÁÖ°­»ç&º¸Á¶°­»ç ¼öÁ¤, °¡°İ ÇÒÀÎ
-// (4) »èÁ¦ - °­ÀÇ Á¤º¸ »èÁ¦
+// (1) ê²€ìƒ‰ - ì „ì²´ ê²€ìƒ‰, ê°•ì˜ ì œëª© ê¸°ì¤€ ê²€ìƒ‰, ê°•ì‚¬ ì´ë¦„ ê¸°ì¤€ ê²€ìƒ‰ (
+// (1) ì‚½ì… - ìƒˆë¡œìš´ ê°•ì˜ ì •ë³´ ì‚½ì…
+// (3) ìˆ˜ì • - ê°•ì˜ë³„ ì£¼ê°•ì‚¬&ë³´ì¡°ê°•ì‚¬ ìˆ˜ì •, ê°€ê²© í• ì¸
+// (4) ì‚­ì œ - ê°•ì˜ ì •ë³´ ì‚­ì œ
 public class MainFrame extends JFrame {
 	JPanel displayPanel;
 
 	public MainFrame() {
-		// ÇÁ·¹ÀÓ
-		this.setSize(360, 120); // ÇÁ·¹ÀÓ °³Ã¼ »ı¼º ¹× Á¦¸ñ ¼³Á¤
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // X ¹öÆ° Å¬¸¯½Ã Á¾·á
-		// Ã¢ À§Ä¡
+		// í”„ë ˆì„
+		this.setSize(360, 120); // í”„ë ˆì„ ê°œì²´ ìƒì„± ë° ì œëª© ì„¤ì •
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // X ë²„íŠ¼ í´ë¦­ì‹œ ì¢…ë£Œ
+		// ì°½ ìœ„ì¹˜
 		Toolkit kit = Toolkit.getDefaultToolkit();
 		Dimension screenSize = kit.getScreenSize();
 		this.setLocation(screenSize.width / 2, screenSize.height / 2);
-		// ÆĞ³Î1 (¹öÆ°µé)
+		// íŒ¨ë„1 (ë²„íŠ¼ë“¤)
 		ButtonPanel buttonPanel = new ButtonPanel();
-		// ÆĞ³Î2 (display)
+		// íŒ¨ë„2 (display)
 		displayPanel = new JPanel();
 		displayPanel.setLayout(new FlowLayout());
-		JLabel label = new JLabel("¸Ş°¡½ºÅÍµğ ¿µ¾î °­ÀÇ °ü¸® ÇÁ·Î±×·¥");
+		JLabel label = new JLabel("ë©”ê°€ìŠ¤í„°ë”” ì˜ì–´ ê°•ì˜ ê´€ë¦¬ í”„ë¡œê·¸ë¨");
 		displayPanel.add(label);
-		getContentPane().add(buttonPanel); // ·¹ÀÌ¾Æ¿ô³¢¸® Á¤·Ä
+		getContentPane().add(buttonPanel); // ë ˆì´ì•„ì›ƒë¼ë¦¬ ì •ë ¬
 		getContentPane().add(displayPanel, BorderLayout.NORTH);
 		// show
 		this.setVisible(true);
@@ -50,20 +50,20 @@ public class MainFrame extends JFrame {
 	}
 }
 
-// ¹öÆ° Å¬·¡½º
+// ë²„íŠ¼ í´ë˜ìŠ¤
 class ButtonPanel extends Panel implements ActionListener {
 	JButton read, insert, update, delete;
 
 	ButtonPanel() {
 		this.setLayout(new FlowLayout());
-		read = new JButton("°Ë»ö");
+		read = new JButton("ê²€ìƒ‰");
 		this.add(read);
 		read.addActionListener(this);
 
 		if (Admin.getAdminAuthority()) {
-			insert = new JButton("»ğÀÔ");
-			update = new JButton("¼öÁ¤");
-			delete = new JButton("»èÁ¦");
+			insert = new JButton("ì‚½ì…");
+			update = new JButton("ìˆ˜ì •");
+			delete = new JButton("ì‚­ì œ");
 			this.add(insert);
 			this.add(update);
 			this.add(delete);

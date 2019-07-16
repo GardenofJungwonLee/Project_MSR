@@ -2,6 +2,6 @@ package lesson.view;
 
 public class FailView {
 	public static void failMessageView(String message) {
-		System.out.println("¹ß»ıµÈ »óÈ² : " + message);
+		System.out.println("ë°œìƒëœ ìƒí™© : " + message);
 	}
 }
