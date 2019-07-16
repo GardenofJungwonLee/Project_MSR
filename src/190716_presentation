@@ -8,7 +8,7 @@
 		- 보조강사 : 근무기간 (month)
 		* 지역 : 지역명, 인원수, 평균수강생 등급
 	
-	3. 구조 (DVC 패턴, 싱글톤 패턴)
+	3. 구조 (MVC 패턴, 싱글톤 패턴)
 		(s)					(s)			┌ VirtualDB (s)
 		Log4J - View - Controller - Model (Service)
 		          ┃ 	   ┃		┃		(s)
